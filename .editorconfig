@@ -1,0 +1,25 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Set default charset
+charset = utf-8
+
+# 4 space indentation
+indent_style = space
+indent_size = 4
+
+# Compatible with Black formatting
+[*.py]
+multi_line_output = 3
+include_trailing_comma = True
+force_grid_wrap = 0
+use_parentheses = True
+ensure_newline_before_comments = True
+line_length = 88
