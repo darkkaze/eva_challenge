@@ -93,5 +93,5 @@ i think the pattern of have the environment in the same folder of the proyect,  
 
 from the devops side, usually the application lives alone in a docker container, (or another type of virtual machine). you don't need a virtualenv or additional managers to do a simple 'pip install -r requirments.txt'
 
-https://grassfedcode.medium.com/five-myths-about-pipenv-698c5f198e4b
-https://hynek.me/articles/python-app-deps-2018/
+- https://grassfedcode.medium.com/five-myths-about-pipenv-698c5f198e4b
+- https://hynek.me/articles/python-app-deps-2018/
