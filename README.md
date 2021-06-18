@@ -3,10 +3,14 @@
 i follow the rest estandar and create the next endpoints
 
 ~~~
-patients/
-patients/<int:pk>/
-patients/<int:patient_pk>/studies
-patients/<int:patient_pk>/studies/<int:pk>/
+#docs
+api-docs/
+
+# endpoints
+api/patients/
+api/patients/<int:pk>/
+api/patients/<int:patient_pk>/studies
+api/patients/<int:patient_pk>/studies/<int:pk>/
 ~~~
 
 the studies are anidated in the patients query, becouse all studies have one patient. i didn't see necesaria endpoints like `studies/`  `studies/<int:pk>/`
@@ -19,7 +23,7 @@ this part of the library give me a nice auto documentation
 
 this autodocumentation page is in `api-docs/`  and i think is the better place for start the code challenge review
 
-generics is very flexible when you learn to override its methods, and its pattern is good, since it forces to move part of the logic to serializers layer.
+generics is very flexible when you learn to override its methods, and its pattern is good, since it forces to move part of the logic to serializers layer (and others).
 
 
 # models
@@ -32,7 +36,7 @@ so i patch this for use the human readable name.  this patch is in the `api.seri
 
 # tests
 
-move factory.py to tests folder, if factory is used just in test, then i think this is a better place
+move `factory.py` to tests folder, if factory is used just in test, then i think this is a better place
 
 # .env.dist ?
 
@@ -43,8 +47,8 @@ writing environment variables to a file saved in the git repo is a security flaw
 SECRET_KEY = os.getenv("SECRET_KEY") or 'dummy'
 ~~~
 
-i think dummy is ok for develop and github actions.
-is necesary to inject the real SECRET_KEY  in the devops process
+i think `dummy` is ok for develop and github actions.
+And is necesary to inject the real SECRET_KEY  in the devops process
 
 
 # Docker
@@ -78,7 +82,7 @@ I disagree with the name "api" for an app. because it doesn't give me a structur
 
 ~~~
 
-django has a good naming convention:  app_name__table_name (pluralized)
+django has a good naming convention:  `app_name__table_name(s)` (pluralized)
 An app is usually a set of related things, and the app prefix helps the tables appear grouped and neat in any database viewer. (when the db has hundred of tables, man gives thanks to God to be able to see them grouped by topic)
 
 I see no reason to change this. But in the end it's trivial, so I decided to keep it
@@ -95,3 +99,8 @@ from the devops side, usually the application lives alone in a docker container,
 
 - https://grassfedcode.medium.com/five-myths-about-pipenv-698c5f198e4b
 - https://hynek.me/articles/python-app-deps-2018/
+
+
+# Makefile 
+
+I've seen makefile become popular recently. I am a bit skeptical of creating a wraper of commands that are already simple by themselves.
