@@ -1,3 +1,11 @@
+# Run
+
+~~~
+docker-compose up django  
+http:localhost:8000
+~~~
+
+
 # endpoints
 
 i follow the rest estandar and create the next endpoints
