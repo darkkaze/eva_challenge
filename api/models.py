@@ -12,6 +12,9 @@ class Patient(models.Model):
 
 
 class BodyPart(models.Model):
+    '''
+    Catalog for body parts
+    '''
     name = models.CharField(max_length=50, unique=True)
 
     class Meta:
@@ -24,6 +27,8 @@ class BodyPart(models.Model):
 
 class Type(models.Model):
     '''
+    Catalog for medical studies
+
     Notes: README.md -> # about the app_names and table_names
         the table name "type" it does not give enough
         information when the db is displayed in a db software.

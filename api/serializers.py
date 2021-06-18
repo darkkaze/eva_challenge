@@ -15,7 +15,7 @@ class PatientSerializer(serializers.ModelSerializer):
 
 class StudySerializer(serializers.ModelSerializer):
     '''
-    Study serializer
+    Study serializer (for list and create)
 
     notes:
         without the explicit body_part and type.
@@ -75,7 +75,9 @@ class StudySerializer(serializers.ModelSerializer):
 
 
 class StudyUpdateSerializer(StudySerializer):
-
+    '''
+    Study serializer (for retrieve and update)
+    '''
     class Meta:
         model = Study
         exclude = ['patient']

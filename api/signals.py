@@ -12,6 +12,9 @@ User = get_user_model()
 
 @receiver(post_save, sender=User)
 def signal_create_token(sender, instance, created, raw, **kwargs):
+    '''
+    Create a token (for auth in the rest-apis) when the user is created.
+    '''
     if created and not raw:
         token = Token.objects.create(user=instance)
         logger.info(f'Token {token.key} for {instance.username}')
